@@ -29,3 +29,12 @@ resource "aws_route53_record" "delegation" {
   zone_id         = data.aws_route53_zone.parent_zone.id
   records         = aws_route53_zone.zone.name_servers
 }
+
+resource "aws_route53_record" "alias_record" {
+  name    = "foobar"
+  zone_id = aws_route53_zone.zone.zone_id
+  type    = "A"
+  ttl     = "300"
+  records = ["1.1.1.1"]
+}
+
