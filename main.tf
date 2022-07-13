@@ -5,7 +5,7 @@ provider "aws" {
 terraform {
   backend "remote" {
     hostname = "console.tfe.aws.bradandmarsha.com"
-    organization = "BradTestOrganization"
+    organization = "brad-test"
 
     workspaces {
       name = "bw-tfe-testing"
