@@ -37,3 +37,11 @@ resource "aws_route53_record" "alias_record" {
   ttl     = "300"
   records = ["1.1.1.1"]
 }
+
+resource "aws_route53_record" "alias_record_2" {
+  name    = "barfoo"
+  zone_id = aws_route53_zone.zone.zone_id
+  type    = "A"
+  ttl     = "300"
+  records = ["2.2.2.2"]
+}
